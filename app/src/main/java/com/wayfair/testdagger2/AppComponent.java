@@ -15,4 +15,13 @@ public interface AppComponent {
     void inject(MainActivity mainActivity);
 
     Resources resources();
+
+    @Component.Builder
+    interface Builder {
+        AppComponent build();
+
+        Builder appModule(AppModule module);
+
+        Builder baseComponent(BaseComponent component);
+    }
 }

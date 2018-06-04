@@ -8,4 +8,11 @@ import dagger.Component;
 public interface BaseComponent {
 
     Context context();
+
+    @Component.Builder
+    interface Builder {
+        BaseComponent build();
+
+        Builder baseModule(BaseModule module);
+    }
 }

@@ -7,6 +7,7 @@ import dagger.BindsInstance;
 import dagger.Component;
 
 @Component(modules = BaseModule.class)
+@BaseScope
 public interface BaseComponent {
 
     Context context();

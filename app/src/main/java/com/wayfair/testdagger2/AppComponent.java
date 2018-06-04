@@ -10,6 +10,7 @@ import dagger.Component;
 
 @Component(modules = AppModule.class,
         dependencies = BaseComponent.class)
+@AppScope
 public interface AppComponent {
 
     void inject(MainApplication mainApplication);

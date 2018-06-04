@@ -3,7 +3,6 @@ package com.wayfair.testdagger2
 import android.app.Application
 import android.content.res.Resources
 import android.util.Log
-import com.wayfair.base.BaseModule
 import com.wayfair.base.DaggerBaseComponent
 import javax.inject.Inject
 
@@ -18,12 +17,13 @@ class MainApplication : Application() {
     override fun onCreate() {
 
         val baseComponent = DaggerBaseComponent.builder()
-                .baseModule(BaseModule(this))
+                .application(this)
                 .build()
         appComponent = DaggerAppComponent.builder()
                 .baseComponent(baseComponent)
-                .appModule(AppModule(this))
+                .application(this)
                 .build()
+
         appComponent.inject(this)
 
         super.onCreate()

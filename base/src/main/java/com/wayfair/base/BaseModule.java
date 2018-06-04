@@ -3,25 +3,12 @@ package com.wayfair.base;
 import android.app.Application;
 import android.content.Context;
 
+import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
 
 @Module
-public class BaseModule {
+public interface BaseModule {
 
-    private Application app;
-
-    public BaseModule(Application app) {
-        this.app = app;
-    }
-
-    @Provides
-    Application provideApplication() {
-        return app;
-    }
-
-    @Provides
-    Context provideAppContext(Application app) {
-        return app;
-    }
+    @Binds
+    Context provideAppContext(Application app);
 }

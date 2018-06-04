@@ -1,9 +1,11 @@
 package com.wayfair.testdagger2;
 
+import android.app.Application;
 import android.content.res.Resources;
 
 import com.wayfair.base.BaseComponent;
 
+import dagger.BindsInstance;
 import dagger.Component;
 
 @Component(modules = AppModule.class,
@@ -20,7 +22,8 @@ public interface AppComponent {
     interface Builder {
         AppComponent build();
 
-        Builder appModule(AppModule module);
+        @BindsInstance
+        Builder application(Application app);
 
         Builder baseComponent(BaseComponent component);
     }

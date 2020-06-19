@@ -3,11 +3,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 27
+        minSdkVersion 23
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -31,16 +31,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation "javax.inject:javax.inject:1"
 
     // Dagger
-    compile "com.google.dagger:dagger:$versions.dagger"
-    compile "com.google.dagger:dagger-android-support:$versions.dagger"
-    kapt "com.google.dagger:dagger-compiler:$versions.dagger"
-    kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 }

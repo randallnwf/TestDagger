@@ -3,8 +3,8 @@ package com.wayfair.testdagger2
 import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
